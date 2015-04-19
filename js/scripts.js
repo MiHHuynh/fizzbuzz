@@ -1,5 +1,15 @@
-$(document).ready(function(){
-	for (i=1; i<=100; i++) {
+$(document).ready(function () {
+	var limit = +prompt("Enter a number");
+	console.log(limit);
+	while ( isNaN(limit) || limit%1 != 0 ) {
+		alert("Please enter a valid number.");
+		var limit = +prompt("Enter a number");
+	};
+	generateFizzBuzz (limit);
+}); //document ready end
+
+function generateFizzBuzz (number) {
+	for (i=1; i<=number; i++) {
 		if (i%3 == 0 && i%5 == 0) {
 			$('#bodyarea').append('fizz buzz' + '<br>');
 		}
@@ -12,11 +22,6 @@ $(document).ready(function(){
 		else {
 			$('#bodyarea').append(i + '<br>');
 		}
-
-
 	}; //end if statement
 
-
-
-
-}); //document ready end
+};
